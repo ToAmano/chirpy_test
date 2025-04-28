@@ -12,10 +12,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: write-all
+    
+#permissions:
+#  contents: read
+#  pages: write
+#  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -43,7 +45,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3
-          bundler-cache: true
+          # bundler-cache: true
 
       - name: bundle install
         run: |
